@@ -20,3 +20,6 @@ I usually do only work with fixed array sizes and I usually only call functions 
 Quite a different experience to what I am used to when programming C. :)
 
 Reminds me why I love my embedded stuff on tiny controllers: I can do a 100% Coverage-Test of nearly all functions within seconds. :)
+
+# GIT
+https://github.com/Techspiring/debuggingandfuzzing
