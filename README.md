@@ -7,8 +7,10 @@ I am using tcc, dunno why, started it years ago.
 
 # Challenges
 It was hard for me to write code that works and then figuring out ways to manipulate it, to get an creative error.
-So I used one of the errors I did when writing the code in the BinarySearch-Function as an example error.
-In my unit-Tests (using semi-random values <- big trap for young players because they are not random as one might want them to) you can not see the problem.
-Can you? ;)
+Errors that have been added:
+
+* isSorted accepts descending as well as ascending sorting.
+* SortArray might try to flip the last element with one outside the array
+* BinarySearch possibly gets stuck and does not find the element it is looking for.
 
 I had to modify the functions given in the exercise sheet, since giving an array to a function in C makes it a pointer, and so it's not possible to get the size of an array.
