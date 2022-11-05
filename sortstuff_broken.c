@@ -14,7 +14,7 @@ uint8_t SortArray(int32_t* arr, size_t n) {
 	// Simple, yet inefficient way of sorting.
 	while(changed > 0) {
 		changed = 0;
-		for(size_t pos = 1; pos < n; pos++) {
+		for(size_t pos = 1; pos <= n; pos++) {
 			if(arr[pos] < arr[pos-1]) {
 				tmp = arr[pos];
 				arr[pos] = arr[pos-1];
@@ -45,7 +45,7 @@ uint8_t BinarySearch(int32_t number, int32_t* arr, size_t n) {
 	return 1;
 }
 bool isSorted(int32_t* arr, size_t n) {
-	return (checkSorting(arr, n) & ORDER_ASC) > 0;
+	return (checkSorting(arr, n)) > 0;
 }
 
 uint8_t checkSorting(int32_t* arr, size_t n) {
