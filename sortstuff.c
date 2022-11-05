@@ -7,7 +7,6 @@
 
 uint8_t SortArray(int32_t* arr, size_t n) {
 	//Get number of elements in array ...
-	if(sizeof(arr)/sizeof(arr[0]) == 1) return 1;
 	uint8_t changed = 1;
 	int16_t tmp;
 	
@@ -23,7 +22,7 @@ uint8_t SortArray(int32_t* arr, size_t n) {
 			}
 		}
 	}
-	return 1;
+	return 0;
 }
 
 uint8_t BinarySearch(int32_t number, int32_t* arr, size_t n) {
