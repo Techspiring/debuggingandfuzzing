@@ -14,8 +14,8 @@ int32_t arr2[0] = {};
 int32_t arr3[5] = {0,0,0,0,0}; 
 int32_t arr4[2] = {1, -1};
 int main(void) {
-	// Only ascending order is accepted as sorted.
-	int n = sizeof(arr1);
+	printf("Testing base cases.\n");
+
 	// Test if sorting check works fine
 	assert(0 == isSorted(arr0, sizeof(arr0)/sizeof(arr0[0])));
 	assert(1 == isSorted(arr1, sizeof(arr1)/sizeof(arr1[0])));
