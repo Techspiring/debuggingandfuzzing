@@ -1,8 +1,10 @@
 // Copyright 2022 Kevin Mader
 // Author: Kevin Mader <mail@kevin-mader.de>
 
+#include <malloc.h>
 #include <stdint.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include "./sortstuff.h"
 
 uint8_t SortArray(int32_t* arr, size_t n) {
@@ -28,6 +30,7 @@ uint8_t SortArray(int32_t* arr, size_t n) {
 uint8_t BinarySearch(int32_t number, int32_t* arr, size_t n) {
 	size_t middle, step;
 	if(!isSorted(arr, n)) return 2;
+	// Intentional error: should be hibit(n-1);
 	middle = hibit(n);
 	step = middle;
 	// Search value by successive approximation
@@ -69,4 +72,30 @@ size_t hibit(size_t n) {
     n |= (n >> 16);
     n |= (n >> 32);
     return n - (n >> 1);
+}
+
+int32_t* GenerateRandomArray(size_t size, uint32_t seed) {
+	int32_t* arr;
+	
+	// Set the randomizer seed
+	srand(seed);
+	
+	// Generate array
+	arr = (int32_t*) malloc(size * sizeof(int32_t));
+	
+	// Generate randomized numbers with randomized signs.
+	for(size_t i = 0; i < size; i++) {
+		if(rand() % 2) arr[i] = rand();
+		else arr[i] = -rand();
+	}
+	return arr;
+}
+
+
+uint8_t LinearSearch(int32_t number, int32_t* arr, size_t n) {
+	// Iterate over all elements, return 1 on match.
+	for(size_t i = 0; i < n; n++) {
+		if(arr[i] == number) return 1;
+	}
+	return 0;
 }

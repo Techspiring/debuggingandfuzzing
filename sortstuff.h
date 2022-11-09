@@ -52,4 +52,13 @@ bool isSorted(int32_t* arr, size_t n);
  */
 size_t hibit(size_t n);
 
+/* Generate
+ *
+ */
+int32_t* GenerateRandomArray(size_t size, uint32_t seed);
+
+/* 
+ *
+ */
+uint8_t LinearSearch(int32_t number, int32_t* arr, size_t n);
 #endif

@@ -2,10 +2,9 @@
 // Author: Kevin Mader <mail@kevin-mader.de>
 
 #include <assert.h>
-#include <malloc.h>
-#include <stdlib.h>
 #include <stdint.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include "./sortstuff.h"
 
 int32_t arr0[5] = {5,4,3,2,1};
@@ -47,11 +46,7 @@ int main(void) {
 		test_arr_size = rand() % 10000;
 		
 		printf("Testing with %d random numbers.\n", test_arr_size);
-		arr = (int32_t*) malloc(test_arr_size * sizeof(int32_t));
-		for(size_t i = 0; i < test_arr_size; i++) {
-			if(rand() % 2) arr[i] = rand() % 0x7FFFFFFF;
-			else arr[i] = -(rand() % 0x7FFFFFFF);
-		}
+		arr = GenerateRandomArray(test_arr_size, 1337);
 		
 		SortArray(arr, test_arr_size);
 		assert(1 == isSorted(arr, test_arr_size));
