@@ -12,9 +12,10 @@ uint8_t SortArray(int32_t* arr, size_t n) {
 	uint8_t changed = 1;
 	int16_t tmp;
 	
-	// Simple, yet inefficient way of sorting.
+	// Simple, yet inefficient way of sorting, Bubble sort.
 	while(changed > 0) {
 		changed = 0;
+
 		for(size_t pos = 1; pos < n; pos++) {
 			if(arr[pos] < arr[pos-1]) {
 				tmp = arr[pos];
@@ -94,8 +95,9 @@ int32_t* GenerateRandomArray(size_t size, uint32_t seed) {
 
 uint8_t LinearSearch(int32_t number, int32_t* arr, size_t n) {
 	// Iterate over all elements, return 1 on match.
-	for(size_t i = 0; i < n; n++) {
+	for(size_t i = 0; i < n; i++) {
 		if(arr[i] == number) return 1;
+		else if(arr[i] > number) return 0;
 	}
 	return 0;
 }

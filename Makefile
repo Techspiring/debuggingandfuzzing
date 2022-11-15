@@ -4,6 +4,7 @@
 # How to improve the testing (randomness)
 # do directed test (whitebox test)
 # Find the overflow-bug
+# Seed for each time a new arrya is being generated.
 
 CC = ../tcc/tcc.exe
 CFLAGS = -pedantic -Wall -Wextra -Werror -Wformat-signedness
