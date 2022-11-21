@@ -15,6 +15,7 @@ int32_t arr2[0] = {};
 int32_t arr3[5] = {0,0,0,0,0}; 
 int32_t arr4[2] = {1, -1};
 int32_t arr5[4] = {0,10,20,30};
+	uint16_t vars[10] = {7,7,3,0,8,5,6,3,5,7};
 int main(void) {
 	time_t rawtime;
 	struct tm * timeinfo;
@@ -55,9 +56,25 @@ int main(void) {
 	int32_t seek = 0;
 	int32_t* arr;
 	
-	//for(rand_tests = 25; rand_tests > 0; rand_tests--) {
-	while(1) {
-		rand_tests++;
+	/*uint8_t found = 1;
+	// Doing some seed-testing
+	for(size_t i = 0; i<INT_MAX; i++) {
+		found = 1;
+		srand(i);
+		for(size_t j=0; j<10; j++) {
+			if((rand()%10) != vars[j]) {
+				found = 0;
+				break;
+			}
+		}
+		if(found == 1) printf("Got it at seed %d\n", i);
+	}*/
+	
+	//srand(100111);
+	//printf("Seed: %d, Values: %d %d %d %d %d %d %d %d %d %d\n", 100111, rand()%10, rand()%10, rand()%10, rand()%10, rand()%10, rand()%10, rand()%10, rand()%10, rand()%10, rand()%10);
+	
+	
+	for(rand_tests = 25; rand_tests > 0; rand_tests--) {
 		test_arr_size = megarand() % 11119;
 		
 		seed = megarand();
